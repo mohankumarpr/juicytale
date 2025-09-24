@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { 
   MapPin, 
   Phone, 
@@ -10,7 +10,9 @@ import {
   Send,
   CheckCircle,
   MessageCircle,
-  Users
+  Users,
+  ChevronDown,
+  HelpCircle
 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import Card from '@/components/ui/Card'
@@ -27,6 +29,7 @@ export default function ContactPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -108,13 +111,13 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-900">
+      <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-900 pt-20">
         <div className="container-custom text-center">
           <AnimatedText>
-            <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900 dark:text-white mb-6">
               Contact <span className="text-gradient">Us</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Get in touch with us for franchise opportunities, general inquiries, or to learn more 
               about our natural fruit juice solutions.
             </p>
@@ -126,10 +129,10 @@ export default function ContactPage() {
       <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6">
               Get in Touch
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Multiple ways to reach us - choose what works best for you
             </p>
           </AnimatedText>
@@ -141,10 +144,10 @@ export default function ContactPage() {
                   <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     {info.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{info.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{info.title}</h3>
                   <div className="space-y-2">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600">{detail}</p>
+                      <p key={idx} className="text-gray-600 dark:text-gray-300">{detail}</p>
                     ))}
                   </div>
                 </div>
@@ -161,7 +164,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <AnimatedText direction="left">
               <Card className="p-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Send us a Message</h3>
                 
                 {isSubmitted ? (
                   <motion.div
@@ -177,7 +180,7 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                           Full Name *
                         </label>
                         <input
@@ -187,12 +190,12 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           placeholder="Your full name"
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                           Email Address *
                         </label>
                         <input
@@ -202,7 +205,7 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -210,7 +213,7 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                           Phone Number
                         </label>
                         <input
@@ -219,12 +222,12 @@ export default function ContactPage() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           placeholder="+91 9876543210"
                         />
                       </div>
                       <div>
-                        <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="interest" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                           Interest
                         </label>
                         <select
@@ -232,7 +235,7 @@ export default function ContactPage() {
                           name="interest"
                           value={formData.interest}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         >
                           <option value="general">General Inquiry</option>
                           <option value="franchise">Franchise Opportunity</option>
@@ -243,7 +246,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Subject *
                       </label>
                       <input
@@ -253,13 +256,13 @@ export default function ContactPage() {
                         value={formData.subject}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         placeholder="What's this about?"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Message *
                       </label>
                       <textarea
@@ -269,7 +272,7 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         placeholder="Tell us more about your inquiry..."
                       />
                     </div>
@@ -305,8 +308,8 @@ export default function ContactPage() {
                   <div className="aspect-video bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
                     <div className="text-center">
                       <MapPin className="w-16 h-16 text-primary-600 mx-auto mb-4" />
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">Our Location</h4>
-                      <p className="text-gray-600">Bengaluru, Karnataka</p>
+                      <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Our Location</h4>
+                      <p className="text-gray-600 dark:text-gray-300">Bengaluru, Karnataka</p>
                     </div>
                   </div>
                 </Card>
@@ -339,41 +342,105 @@ export default function ContactPage() {
       <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="flex items-center justify-center mb-6">
+              <HelpCircle className="w-8 h-8 text-primary-600 mr-3" />
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Quick answers to common questions about JuicyTale
             </p>
           </AnimatedText>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto space-y-4">
             {[
               {
                 question: "What makes JuicyTale different?",
-                answer: "We use 100% natural ingredients with zero preservatives and our innovative 20-second premix technology ensures fresh taste every time."
+                answer: "We use 100% natural ingredients with zero preservatives and our innovative 20-second premix technology ensures fresh taste every time. Our unique blend of traditional recipes with modern convenience sets us apart in the market."
               },
               {
                 question: "How do I start a franchise?",
-                answer: "Contact our franchise team through the form above or call us directly. We'll guide you through the entire process from application to opening."
+                answer: "Contact our franchise team through the form above or call us directly. We'll guide you through the entire process from application to opening, including site selection, training, and ongoing support."
               },
               {
                 question: "What's the investment required?",
-                answer: "Investment varies based on location and setup. Contact us for detailed information about franchise costs and requirements."
+                answer: "Investment varies based on location and setup type (Cafe, Event Stall, Restaurant, or Food Court). Contact us for detailed information about franchise costs, equipment requirements, and financing options."
               },
               {
                 question: "Do you provide training?",
-                answer: "Yes, we provide comprehensive training for all franchise partners including operations, marketing, and customer service."
+                answer: "Yes, we provide comprehensive training for all franchise partners including operations, marketing, customer service, and product preparation. Training includes both theoretical and hands-on practical sessions."
+              },
+              {
+                question: "What support do you offer after opening?",
+                answer: "We provide ongoing marketing support, operational guidance, product updates, and regular performance reviews. Our dedicated support team is always available to help you succeed."
+              },
+              {
+                question: "How long does it take to set up a franchise?",
+                answer: "The setup process typically takes 2-4 weeks after site approval, depending on location and customization requirements. This includes equipment installation, staff training, and final inspections."
               }
             ].map((faq, index) => (
-              <Card key={index} delay={index * 0.1}>
-                <div className="p-6">
-                  <h4 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h4>
-                  <p className="text-gray-600">{faq.answer}</p>
-                </div>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              >
+                <button
+                  onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                >
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white pr-4">
+                    {faq.question}
+                  </h4>
+                  <motion.div
+                    animate={{ rotate: expandedFAQ === index ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex-shrink-0"
+                  >
+                    <ChevronDown className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+                  </motion.div>
+                </button>
+                
+                <AnimatePresence>
+                  {expandedFAQ === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-4 border-t border-gray-200 dark:border-gray-700">
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed pt-4">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
+
+          {/* FAQ CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-center mt-12"
+          >
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
+              Still have questions? We're here to help!
+            </p>
+            <Button variant="outline" size="lg" className="border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white">
+              <MessageCircle className="w-5 h-5 mr-2" />
+              Ask a Question
+            </Button>
+          </motion.div>
         </div>
       </section>
 

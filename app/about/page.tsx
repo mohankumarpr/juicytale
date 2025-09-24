@@ -115,7 +115,7 @@ export default function AboutPage() {
             >
               About JuicyTale
             </motion.h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed font-medium">
               We are more than just a juice shop; we are a movement towards healthier living. 
               Our franchise is built on the foundation of natural ingredients, innovative technology, 
               and a commitment to excellence.
@@ -149,12 +149,12 @@ export default function AboutPage() {
               >
                 Our Story
               </motion.h2>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed font-medium">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed font-medium">
                 JuicyTale was born from a simple yet powerful vision: to make fresh, natural fruit juices 
                 accessible to everyone, everywhere. Founded in 2020, we recognized the gap in the market 
                 for truly natural, preservative-free fruit beverages.
               </p>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed font-medium">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed font-medium">
                 Our innovative 20-second magic technology allows us to serve fresh, natural juices 
                 without compromising on quality or taste. We've built a franchise model that empowers 
                 entrepreneurs while bringing healthy options to communities.
@@ -228,14 +228,14 @@ export default function AboutPage() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6">
               Our Journey
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               From a small startup to a growing franchise network, here's how we've evolved.
             </p>
           </AnimatedText>
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary-200"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary-200 dark:bg-primary-700"></div>
 
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
@@ -251,13 +251,13 @@ export default function AboutPage() {
                 >
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <Card className="p-6">
-                      <div className="text-primary-600 font-bold text-lg mb-2">{milestone.year}</div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{milestone.title}</h3>
-                      <p className="text-gray-600">{milestone.description}</p>
+                      <div className="text-primary-600 dark:text-primary-400 font-bold text-lg mb-2">{milestone.year}</div>
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{milestone.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-300">{milestone.description}</p>
                     </Card>
                   </div>
                   
-                  <div className="w-8 h-8 bg-primary-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center z-10">
+                  <div className="w-8 h-8 bg-primary-600 rounded-full border-4 border-white dark:border-gray-800 shadow-lg flex items-center justify-center z-10">
                     <CheckCircle className="w-4 h-4 text-white" />
                   </div>
                   
@@ -276,7 +276,7 @@ export default function AboutPage() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6">
               Meet Our Team
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               The passionate individuals behind JuicyTale's success.
             </p>
           </AnimatedText>
@@ -288,9 +288,9 @@ export default function AboutPage() {
                   <div className="w-32 h-32 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full mx-auto mb-6 flex items-center justify-center">
                     <Users className="w-16 h-16 text-primary-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                  <p className="text-primary-600 font-semibold mb-4">{member.role}</p>
-                  <p className="text-gray-600 leading-relaxed">{member.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{member.name}</h3>
+                  <p className="text-primary-600 dark:text-primary-400 font-semibold mb-4">{member.role}</p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{member.description}</p>
                 </div>
               </Card>
             ))}

@@ -51,7 +51,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white">
       {/* Main Footer Content */}
       <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -216,7 +216,7 @@ const Footer = () => {
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 JuicyTale. All rights reserved.
+              © {new Date().getFullYear()} JuicyTale. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm">
               Created with <span className="text-primary-400">❤️</span> by JuicyTale Team

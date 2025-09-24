@@ -100,15 +100,15 @@ const MenuThumbnailGrid = ({
           <>
             <button
               onClick={prevSlide}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 shadow-lg"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-700 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg"
             >
-              <ChevronLeft className="w-5 h-5 text-gray-700" />
+              <ChevronLeft className="w-5 h-5 text-gray-700 dark:text-gray-300" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 shadow-lg"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-700 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg"
             >
-              <ChevronRight className="w-5 h-5 text-gray-700" />
+              <ChevronRight className="w-5 h-5 text-gray-700 dark:text-gray-300" />
             </button>
           </>
         )}
@@ -134,7 +134,7 @@ const MenuThumbnailGrid = ({
                   itemsPerView === 2 ? 'w-1/2' : 'w-1/4'
                 }`}
               >
-                <div className="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
                   {/* Menu Thumbnail */}
                   <div className="relative aspect-[3/4] overflow-hidden">
                     <img 
@@ -155,13 +155,13 @@ const MenuThumbnailGrid = ({
                     <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <button
                         onClick={() => openFullscreen(index)}
-                        className="p-2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full transition-all duration-200 shadow-lg"
+                        className="p-2 bg-white/90 dark:bg-gray-700/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-600 rounded-full transition-all duration-200 shadow-lg"
                       >
                         <ZoomIn className="w-4 h-4 text-gray-700" />
                       </button>
                       <button
                         onClick={() => downloadMenu(page, index)}
-                        className="p-2 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full transition-all duration-200 shadow-lg"
+                        className="p-2 bg-white/90 dark:bg-gray-700/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-600 rounded-full transition-all duration-200 shadow-lg"
                       >
                         <Download className="w-4 h-4 text-gray-700" />
                       </button>
@@ -211,9 +211,9 @@ const MenuThumbnailGrid = ({
               {/* Close Button */}
               <button
                 onClick={closeFullscreen}
-                className="absolute -top-4 -right-4 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 shadow-lg"
+                className="absolute -top-4 -right-4 z-10 w-12 h-12 bg-white/90 dark:bg-gray-700/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg"
               >
-                <X className="w-6 h-6 text-gray-700" />
+                <X className="w-6 h-6 text-gray-700 dark:text-gray-300" />
               </button>
 
               {/* Menu Image */}
@@ -231,8 +231,8 @@ const MenuThumbnailGrid = ({
                     onClick={() => setSelectedPage(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === selectedPage
-                        ? 'bg-white scale-125'
-                        : 'bg-white/50 hover:bg-white/70'
+                        ? 'bg-white dark:bg-gray-700 scale-125'
+                        : 'bg-white/50 dark:bg-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-600/70'
                     }`}
                   />
                 ))}
@@ -241,9 +241,9 @@ const MenuThumbnailGrid = ({
               {/* Download Button */}
               <button
                 onClick={() => downloadMenu(menuPages[selectedPage], selectedPage)}
-                className="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur-sm hover:bg-white rounded-full transition-all duration-200 shadow-lg"
+                className="absolute bottom-4 right-4 p-3 bg-white/90 dark:bg-gray-700/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-600 rounded-full transition-all duration-200 shadow-lg"
               >
-                <Download className="w-5 h-5 text-gray-700" />
+                <Download className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               </button>
             </motion.div>
           </motion.div>

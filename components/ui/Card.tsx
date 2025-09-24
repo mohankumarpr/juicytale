@@ -20,7 +20,7 @@ const Card = ({ children, className, hover = true, delay = 0 }: CardProps) => {
       viewport={{ once: true }}
       whileHover={hover ? { y: -8, scale: 1.02 } : {}}
       className={cn(
-        'bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300',
+        'bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300',
         className
       )}
     >

@@ -92,7 +92,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
         <div className="container-custom text-center">
           <AnimatedText>
             <motion.h1 
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section id="story" className="section-padding bg-white">
+      <section id="story" className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedText direction="left">
@@ -194,7 +194,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section id="mission" className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+      <section id="mission" className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-700 dark:to-primary-900 text-white">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
@@ -222,10 +222,10 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gray-50 dark:bg-gray-800">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6">
               Our Journey
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -270,10 +270,10 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="section-padding bg-white">
+      <section id="team" className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6">
               Meet Our Team
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -299,7 +299,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-secondary-500 to-secondary-700 text-white">
+      <section className="section-padding bg-gradient-to-r from-secondary-500 to-secondary-700 dark:from-secondary-600 dark:to-secondary-800 text-white">
         <div className="container-custom text-center">
           <AnimatedText>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">

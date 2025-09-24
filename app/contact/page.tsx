@@ -108,7 +108,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary-50 to-secondary-50">
+      <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-900">
         <div className="container-custom text-center">
           <AnimatedText>
             <h1 className="text-5xl md:text-6xl font-display font-bold text-gray-900 mb-6">
@@ -123,7 +123,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
@@ -155,7 +155,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form and Map */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gray-50 dark:bg-gray-800">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -336,7 +336,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
@@ -378,7 +378,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-secondary-500 to-secondary-700 text-white">
+      <section className="section-padding bg-gradient-to-r from-secondary-500 to-secondary-700 dark:from-secondary-600 dark:to-secondary-800 text-white">
         <div className="container-custom text-center">
           <AnimatedText>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">

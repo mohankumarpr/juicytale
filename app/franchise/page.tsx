@@ -197,7 +197,7 @@ export default function FranchisePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-700 dark:to-primary-900 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full animate-pulse-slow"></div>
@@ -266,13 +266,13 @@ export default function FranchisePage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6">
               Why Choose JuicyTale Franchise?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Join a growing family of successful entrepreneurs with our proven business model
             </p>
           </AnimatedText>
@@ -293,13 +293,13 @@ export default function FranchisePage() {
       </section>
 
       {/* Investment Packages */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gray-50 dark:bg-gray-800">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6">
               Investment Packages
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Choose the package that best fits your budget and business goals
             </p>
           </AnimatedText>
@@ -319,15 +319,15 @@ export default function FranchisePage() {
                   </div>
                 )}
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{pkg.name}</h3>
                   <div className="text-4xl font-bold text-primary-600 mb-4">{pkg.price}</div>
-                  <p className="text-gray-600 mb-6">{pkg.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6">{pkg.description}</p>
                   
                   <ul className="space-y-3 mb-8">
                     {pkg.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center">
                         <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -347,13 +347,13 @@ export default function FranchisePage() {
       </section>
 
       {/* Requirements Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6">
               Franchise Requirements
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               What you need to become a successful JuicyTale franchise partner
             </p>
           </AnimatedText>
@@ -365,8 +365,8 @@ export default function FranchisePage() {
                   <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     {req.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{req.title}</h3>
-                  <p className="text-gray-600">{req.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{req.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{req.description}</p>
                 </div>
               </Card>
             ))}
@@ -375,7 +375,7 @@ export default function FranchisePage() {
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+      <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-700 dark:to-primary-900 text-white">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
@@ -411,10 +411,10 @@ export default function FranchisePage() {
       <section id="apply" className="section-padding bg-gray-50">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6">
               Apply for Franchise
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Fill out the form below and our team will contact you within 24 hours
             </p>
           </AnimatedText>
@@ -428,14 +428,14 @@ export default function FranchisePage() {
                   className="text-center py-12"
                 >
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Application Submitted!</h4>
-                  <p className="text-gray-600">Thank you for your interest. We'll contact you within 24 hours.</p>
+                  <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Application Submitted!</h4>
+                  <p className="text-gray-600 dark:text-gray-300">Thank you for your interest. We'll contact you within 24 hours.</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Full Name *
                       </label>
                       <input
@@ -450,7 +450,7 @@ export default function FranchisePage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Email Address *
                       </label>
                       <input
@@ -468,7 +468,7 @@ export default function FranchisePage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Phone Number *
                       </label>
                       <input
@@ -483,7 +483,7 @@ export default function FranchisePage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="city" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         City *
                       </label>
                       <input
@@ -501,7 +501,7 @@ export default function FranchisePage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="experience" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="experience" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Business Experience
                       </label>
                       <select
@@ -519,7 +519,7 @@ export default function FranchisePage() {
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="investment" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="investment" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Investment Range
                       </label>
                       <select
@@ -539,7 +539,7 @@ export default function FranchisePage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Additional Information
                     </label>
                     <textarea
@@ -579,7 +579,7 @@ export default function FranchisePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-secondary-500 to-secondary-700 text-white">
+      <section className="section-padding bg-gradient-to-r from-secondary-500 to-secondary-700 dark:from-secondary-600 dark:to-secondary-800 text-white">
         <div className="container-custom text-center">
           <AnimatedText>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">

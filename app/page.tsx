@@ -17,6 +17,9 @@ import FeatureCard from '@/components/ui/FeatureCard'
 import AnimatedText from '@/components/ui/AnimatedText'
 import Slider from '@/components/ui/Slider'
 import ProductCarousel from '@/components/ui/ProductCarousel'
+import Testimonials from '@/components/ui/Testimonials'
+import Newsletter from '@/components/ui/Newsletter'
+import SocialLinks from '@/components/ui/SocialLinks'
 
 export default function HomePage() {
   const sliderData = [
@@ -136,6 +139,51 @@ export default function HomePage() {
     }
   ]
 
+  const testimonials = [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      role: "Health Enthusiast",
+      content: "JuicyTale's fresh juices have completely transformed my morning routine. The quality is outstanding and the taste is incredible!",
+      rating: 5
+    },
+    {
+      id: 2,
+      name: "Mike Chen",
+      role: "Business Owner",
+      content: "As a franchise owner, I couldn't be happier with JuicyTale. The support is excellent and the products sell themselves.",
+      rating: 5
+    },
+    {
+      id: 3,
+      name: "Emma Davis",
+      role: "Fitness Trainer",
+      content: "My clients love these juices! They're the perfect post-workout refreshment. Natural, healthy, and absolutely delicious.",
+      rating: 5
+    },
+    {
+      id: 4,
+      name: "David Wilson",
+      role: "Customer",
+      content: "The variety of flavors is amazing. I've tried almost everything on the menu and haven't been disappointed yet.",
+      rating: 5
+    },
+    {
+      id: 5,
+      name: "Lisa Martinez",
+      role: "Mom of Three",
+      content: "Finally, a healthy drink option my kids actually love! No artificial ingredients, just pure natural goodness.",
+      rating: 5
+    },
+    {
+      id: 6,
+      name: "James Brown",
+      role: "Chef",
+      content: "The quality of ingredients is restaurant-grade. These juices would fit perfectly in any fine dining establishment.",
+      rating: 5
+    }
+  ]
+
   return (
     <div className="min-h-screen">
       {/* Hero Slider */}
@@ -149,7 +197,7 @@ export default function HomePage() {
       />
 
       {/* Features Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section className="section-padding bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
             <motion.h2 
@@ -172,7 +220,7 @@ export default function HomePage() {
             >
               We Love What We Do
             </motion.h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed font-medium">
               Juicy tale instant premix - 100% Natural Frozen Fruit premix, without preservatives & artificial ingredients, targeted at Food & Beverage outlets.
             </p>
           </AnimatedText>
@@ -192,7 +240,7 @@ export default function HomePage() {
       </section>
 
       {/* What's Your Favourite Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="section-padding bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
             <motion.h2 
@@ -215,7 +263,7 @@ export default function HomePage() {
             >
               What's Your Favourite?
             </motion.h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed font-medium">
               Discover our premium selection of natural fruit juices and beverages. Each product is crafted with care to deliver the perfect taste experience.
             </p>
           </AnimatedText>
@@ -255,7 +303,7 @@ export default function HomePage() {
       </section>
 
       {/* Franchise Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+      <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-700 dark:to-primary-900 text-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedText direction="left">
@@ -314,7 +362,7 @@ export default function HomePage() {
       </section>
 
       {/* Business Models Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gray-50 dark:bg-gray-800">
         <div className="container-custom">
           <AnimatedText className="text-center mb-16">
             <motion.h2 
@@ -337,7 +385,7 @@ export default function HomePage() {
             >
               Proven & Business Model
             </motion.h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed font-medium">
               YOUR FRANCHISE PARTNER - Unlock the potential of your business by partnering with Juicy Tale! 
               Our franchise opportunities offer a proven model, premium products, and comprehensive support.
             </p>
@@ -350,8 +398,8 @@ export default function HomePage() {
                   <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
                     {model.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{model.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{model.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{model.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{model.description}</p>
                 </div>
               </Card>
             ))}
@@ -360,7 +408,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-secondary-500 to-secondary-700 text-white">
+      <section className="section-padding bg-gradient-to-r from-secondary-500 to-secondary-700 dark:from-secondary-600 dark:to-secondary-800 text-white">
         <div className="container-custom text-center">
           <AnimatedText>
             <motion.h2 
@@ -395,6 +443,44 @@ export default function HomePage() {
                 Learn More
               </Button>
             </div>
+          </AnimatedText>
+        </div>
+      </section>
+
+      {/* Customer Testimonials */}
+      <Testimonials testimonials={testimonials} />
+
+      {/* Newsletter Signup */}
+      <Newsletter />
+
+      {/* Social Media Links */}
+      <section className="section-padding bg-white dark:bg-gray-900">
+        <div className="container-custom text-center">
+          <AnimatedText>
+            <motion.h2 
+              className="text-3xl md:text-4xl font-display font-bold mb-6"
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              style={{
+                background: "linear-gradient(45deg, #FF6B6B, #FFA726, #4CAF50, #FFA726, #FF6B6B)",
+                backgroundSize: "300% 300%",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text"
+              }}
+            >
+              Connect With Us
+            </motion.h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto font-medium">
+              Follow us on social media for the latest updates, health tips, and exclusive offers
+            </p>
+            <SocialLinks className="justify-center" />
           </AnimatedText>
         </div>
       </section>

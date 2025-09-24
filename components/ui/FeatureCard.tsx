@@ -20,7 +20,7 @@ const FeatureCard = ({
   className = ''
 }: FeatureCardProps) => {
   return (
-    <Card delay={delay} className={`${className} bg-white/95 backdrop-blur-sm border border-gray-200/50`}>
+    <Card delay={delay} className={`${className} bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50`}>
       <div className="p-8 text-center">
         <motion.div
           whileHover={{ scale: 1.1, rotate: 5 }}
@@ -29,8 +29,8 @@ const FeatureCard = ({
         >
           {icon}
         </motion.div>
-        <h3 className="text-xl font-bold text-gray-900 mb-4">{title}</h3>
-        <p className="text-gray-700 leading-relaxed font-medium">{description}</p>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{title}</h3>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-medium">{description}</p>
       </div>
     </Card>
   )
